@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Raksha Bandhan Ritika 🎁</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(#fff0f5, #fce4ec);
+      overflow-x: hidden;
+    }
+
+    .shower, .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .shower span, .hearts span {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-size: cover;
+      animation: fall 6s linear infinite;
+    }
+
+    .shower span {
+      background-image: url('https://i.ibb.co/bjMvfN1H/Screenshot-20250806-083347-1.png');
+    }
+
+    .hearts span {
+      background-image: urlhttps://i.ibb.co/s92qfcPJ/Screenshot-2025-08-02-23-39-54-51-a63b0f8076346d26cbdc1b971a1da2a7.jpg
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-50px); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 2.5em;
+      color: #cc007a;
+      position: relative;
+      z-index: 2;
+    }
+
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px;
+      scroll-snap-type: x mandatory;
+      z-index: 2;
+    }
+
+    .slider img {
+      width: 250px;
+      height: 180px;
+      border-radius: 20px;
+      scroll-snap-align: start;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .quotes {
+      text-align: center;
+      font-size: 1.2em;
+      color: #880e4f;
+      margin: 20px;
+      animation: quoteFade 15s infinite;
+    }
+
+    @keyframes quoteFade {
+      0%, 100% {opacity: 0;}
+      10% {opacity: 1;}
+    }
+
+    .gifts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .gift-btn {
+      padding: 10px 20px;
+      background: #ff4081;
+      border: none;
+      color: white;
+      font-size: 1.1em;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+
+    .gift-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .gift-img {
+      display: none;
+      margin-top: 10px;
+      max-width: 200px;
+      border-radius: 15px;
+    }
+
+    .secret-message {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .reveal-btn {
+      padding: 12px 24px;
+      font-size: 1.1em;
+      background: #ff80ab;
+      border: none;
+      color: white;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .reveal-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .message-text {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #6a1b9a;
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    audio {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Flower & Heart Shower -->
+  <div class="shower" id="shower-container"></div>
+  <div class="hearts" id="heart-container"></div>
+
+  <!-- Heading -->
+  <h1>🎉 Happy Raksha Bandhan Ritika 🎁</h1>
+
+  <!-- Slider -->
+  <div class="slider">
+    <img src="https://i.postimg.cc/dtNsRFtb/Snapchat-742326480.jpg">
+    <img src="https://i.pinimg.com/originals/7a/f3/58/7af358ace05844d78afa228354b4de45.gif">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2vqnYu-E2eXuNBVtPEhfLa4XPts6pNT-Cpm8uI2A0IuW4sLuQSHx21NE&s=10">
+    <img src="https://i.postimg.cc/7hskN1D3/Snapchat-601980588.jpg">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyeME_fhOHpAplz-krZuCkDXKfqFNJtevSH0OpsbmYl9yftMQ6srmbNrk&s=10">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfzute3Z0DxH2Ul2LWi0QTVfTijpvhGlfvpwb1JoKxH-TKqaISTyiFRvql&s=10">
+    <img src="https://i.ibb.co/8gfKzGJD/Snapchat-1001584001.jpg">
+  </div>
+
+  <!-- Quotes -->
+  <div class="quotes" id="quote-box">
+    "A sibling is a lens through which you see your childhood forever."
+  </div>
+
+  <!-- Gifts -->
+  <div class="gifts">
+    <div>
+      <button class="gift-btn" onclick="showGift(0)">Meri Pyari Bahan hai Ye</button>
+      <img class="gift-img" src="https://i.ibb.co/s92qfcPJ/Screenshot-2025-08-02-23-39-54-51-a63b0f8076346d26cbdc1b971a1da2a7.jpg" />
+    </div>
+    <div>
+      <button class="gift-btn" onclick="showGift(1)">🍫 Chocolate for You</button>
+      <img class="gift-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDDz_8-Tw2hIY9x1f_WxabRBtpOL6E7wCRScbkKj8KwAuWt8Q0DmOzXks&s=10" />
+    </div>
+    <div>
+      <button class="gift-btn" onclick="showGift(2)">🌸 Sweet Rakhi Gift</button>
+      <img class="gift-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSslQT74ySOMauuEx8cOQIsp3VavkhETchbMY3k8DwRzL7hohsat9UCvB3&s=10" />
+    </div>
+    <div>
+      <button class="gift-btn" onclick="showGift(3)">👗 Fashion Surprise</button>
+      <img class="gift-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF0OAZ92Xsg8Yjz5Y96m3AhkfHOb1SQFv8q_2KRYUvIGN-k5qIUyp1Dois&s=10" />
+    </div>
+  </div>
+
+  <!-- Secret Message -->
+  <div class="secret-message">
+    <button class="reveal-btn" onclick="revealMessage()">💌 Tap to Read a Message</button>
+    <div class="message-text" id="secret-text">
+      Dear Ritika,<br/><br/>
+      On this special Raksha Bandhan, I just want to say — you are the heart of our family and my forever friend. Thank you for your love, laughter, and all the silly fights too. I’m lucky to have a sister like you. ❤️<br/><br/>
+      Your brother,<br/>
+      Hrishi 💖
+    </div>
+  </div>
+<br><br>
+<style>
+.magic-btn {
+  background: linear-gradient(45deg, #ff7eb3, #ff758c);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 10px #ff7eb3, 0 0 20px #ff758c;
+  animation: glow 1.5s infinite alternate;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.magic-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ff4d88, 0 0 30px #ff99cc;
+}
+@keyframes glow {
+  from { box-shadow: 0 0 5px #ff7eb3; }
+  to { box-shadow: 0 0 20px #ff758c; }
+}
+</style>
+
+<!-- Magical Button with Link -->
+<a href="https://myworldn.github.io/Ritika/" target="_blank">
+  <button class="magic-btn">✨ More Gift Is Here Bahna</button>
+</a>
+  <script>
+    //
+    const quotes = [
+      "A sibling is a lens through which you see your childhood forever.",
+      "Rakhi is a thread that binds two souls in a bond of joy forever.",
+      "Dear Ritika, you're the sparkle in my life. Happy Raksha Bandhan!",
+      "No matter how far we go, this bond keeps us together ❤️",
+      "You're not just my sister, you're my forever friend."
+    ];
+
+    let quoteIndex = 0;
+    setInterval(() => {
+      quoteIndex = (quoteIndex + 1) % quotes.length;
+      document.getElementById('quote-box').innerText = quotes[quoteIndex];
+    }, 5000);
+
+    function showGift(index) {
+      document.querySelectorAll('.gift-img')[index].style.display = 'block';
+    }
+
+    function revealMessage() {
+      document.getElementById("secret-text").style.display = "block";
+    }
+
+    // Create falling shower
+    const addShower = (containerId, imageCount, delayMax) => {
+      const container = document.getElementById(containerId);
+      for (let i = 0; i < imageCount; i++) {
+        const drop = document.createElement('span');
+        drop.style.left = Math.random() * 100 + 'vw';
+        drop.style.animationDelay = Math.random() * delayMax + 's';
+        container.appendChild(drop);
+      }
+    };
+
+    addShower("shower-container", 30, 5);
+    addShower("heart-container", 20, 7);
+  </script>
+</body>
+</html>
